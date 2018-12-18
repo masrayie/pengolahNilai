@@ -22,4 +22,16 @@ class HomepageController extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function store(){
+		//
+	}
+
+	public function put($id){
+		//
+	}
+
+	public function delete($id){
+		//
+	}
 }
