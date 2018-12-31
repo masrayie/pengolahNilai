@@ -53,7 +53,7 @@ class Pegawai extends CI_Controller {
                 }
 				if($jabatan == 3){
 					$this->load->view('HeaderFooter/Header3', $data);
-					$this->load->view('pegawaiall_view', $data);
+					$this->load->view('viewAllPegawai', $data);
 				} else {
 					return false;
 				}
@@ -109,7 +109,7 @@ class Pegawai extends CI_Controller {
                 // print_r($session_data);
 				if($jabatan == 3){
 					$this->load->view('HeaderFooter/Header3', $data);
-					$this->load->view('inputpegawai_view', $data);
+					$this->load->view('viewCreatePegawai', $data);
 				} else {
 					return false;
 				}
@@ -133,7 +133,7 @@ class Pegawai extends CI_Controller {
         $info_peg       = $this->input->post('info_peg');
         $objPg = new M_Pegawai(
             $nip, null, $namalengkap, $ttl, $jenkel, $alamat, $telepon, $pendidikan,
-            $p_jabatan, $ingo_peg
+            $p_jabatan, $info_peg
         );
         $data = array(
             'nip'           => $objPg->getNip(),
@@ -147,7 +147,7 @@ class Pegawai extends CI_Controller {
             'info_peg'      => $objPg->getInfoPeg()
         );
         $this->ModelDB->insertData($data, 'pegawai');
-        redirect(base_url('/index.php/Pegawai'), 'refresh');
+        // redirect(base_url('/index.php/Pegawai'), 'refresh');
     }
 
     public function edit($nip){
@@ -173,7 +173,7 @@ class Pegawai extends CI_Controller {
                 // print_r($session_data);
 				if($jabatan == 3){
 					$this->load->view('HeaderFooter/Header3', $data);
-					$this->load->view('viewEditProfile', $data);
+					$this->load->view('viewEditPegawai', $data);
 				} else {
 					return false;
 				}
@@ -187,7 +187,6 @@ class Pegawai extends CI_Controller {
 
     public function put($nip){
         $nip            = $nip;
-        $username       = $this->input->post('username');
         $namalengkap    = $this->input->post('namalengkap');
         $ttl            = $this->input->post('ttl');
         $jenkel         = $this->input->post('jenkel');
@@ -197,12 +196,11 @@ class Pegawai extends CI_Controller {
         $p_jabatan      = $this->input->post('p_jabatan');
         $info_peg       = $this->input->post('info_peg');
         $objPg = new M_Pegawai(
-            $nip, $username, $namalengkap, $ttl, $jenkel, $alamat, $telepon, $pendidikan,
-            $p_jabatan, $ingo_peg
+            $nip, null, $namalengkap, $ttl, $jenkel, $alamat, $telepon, $pendidikan,
+            $p_jabatan, $info_peg
         );
         $data = array(
             'nip'           => $objPg->getNip(),
-            'username'      => $objPg->getUsername(),
             'nama_lengkap'  => $objPg->getNamaLengkap(),
             'ttl'           => $objPg->getTtl(),
             'jenkel'        => $objPg->getJenkel(),

@@ -13,8 +13,11 @@
 	<link rel="stylesheet" href="<?php echo base_url("assets/vendor/chartist/css/chartist-custom.css");?>">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/main.css");?>">
+	
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/demo.css");?>">
+	<link rel="stylesheet" href="<?php echo base_url("assets/vendor/datatables/dataTables.bootstrap.css");?>">
+  	<link href="<?php echo base_url("assets/vendor/Select2/dist/css/select2.min.css");?>" rel="stylesheet" />
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
@@ -44,12 +47,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span><?php echo $objUser['namalengkap'];?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="<?php echo base_url('/index.php/verifyLogin/logout')?>"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 						<!-- <li>
@@ -70,7 +70,7 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-code"></i> <span>Siswa</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-                                    <li><a href="page-profile.html" class="">Data Siswa Per Kelas</a></li>
+                                    <li><a href="<?php echo base_url('index.php/Siswa/Nilai/searchKelas')?>" class="">Data Siswa Per Kelas</a></li>
 								</ul>
 							</div>
 						</li>
@@ -78,8 +78,8 @@
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-chart-bars"></i> <span>Nilai</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">Data Nilai</a></li>
-                                    <li><a href="page-login.html" class="">Input Nilai</a></li>
+									<li><a href="<?php echo base_url('index.php/Nilai')?>" class="">Data Semua Nilai</a></li>
+                                    <li><a href="<?php echo base_url('index.php/Nilai/searchNilai')?>" class="">Nilai Kelas</a></li>
                                     <?php
                                         if($objUser['jabatan'] == 2){
                                             echo '<li><a href="page-login.html" class="">Cetak Rapot Siswa</a></li>' ;
@@ -88,7 +88,18 @@
                                     ?>
 								</ul>
 							</div>
-						</li>		
+						</li>
+						<!-- <li>
+							<a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="lnr lnr-alarm"></i> <span>Kurikulum</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages5" class="collapse ">
+								<ul class="nav">
+									<li><a href="page-profile.html" class="">Data Kurikulum</a></li>
+									<li><a href="page-profile.html" class="">Data Mata Pelajaran</a></li>
+									<li><a href="page-login.html" class="">Tambah Mata Pelajaran</a></li>
+								</ul>
+							</div>
+						</li> -->
+						
 					</ul>
 				</nav>
 			</div>

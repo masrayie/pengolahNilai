@@ -16,42 +16,42 @@
 							<h3 class="panel-title">Form Edit Pegawai</h3>
 						</div>
 						<div class="panel-body">
-							<form action="/produk" method="POST">
+							<form action="<?php echo base_url('index.php/Pegawai/put/'.$objPegawai->getNip()); ?>" method="POST">
 								<div class="form-group">
 									<label class="control-label ">NIP </label>
-									<input type="text" class="form-control" placeholder="NIP" name="nip" value="">
+									<input type="text" class="form-control" placeholder="NIP" name="nip" value="<?php echo $objPegawai->getNip()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Nama Pegawai </label>
-									<input type="text" class="form-control" placeholder="Nama Pegawai" name="namalengkap" value="">
+									<input type="text" class="form-control" placeholder="Nama Pegawai" name="namalengkap" value="<?php echo $objPegawai->getNamaLengkap()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Tanggal Lahir </label>
-									<input type="text" class="form-control" placeholder="Tanggal Lahir" name="ttl" value="">
+									<input type="text" class="form-control" placeholder="Tanggal Lahir" name="ttl" value="<?php echo $objPegawai->getTtl()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Jenis Kelamin </label>
-									<input type="text" class="form-control" placeholder="Jenis Kelamin" name="jenkel" value="">
+									<input type="text" class="form-control" placeholder="Jenis Kelamin" name="jenkel" value="<?php echo $objPegawai->getJenkel()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Alamat </label>
-									<input type="text" class="form-control" placeholder="Alamat" name="alamat" value="">
+									<input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $objPegawai->getAlamat()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Telepon </label>
-									<input type="text" class="form-control" placeholder="Telepon" name="telepon" value="">
+									<input type="text" class="form-control" placeholder="Telepon" name="telepon" value="<?php echo $objPegawai->getTelepon()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Pendidikan </label>
-									<input type="text" class="form-control" placeholder="Pendidikan" name="pendidikan" value="">
+									<input type="text" class="form-control" placeholder="Pendidikan" name="pendidikan" value="<?php echo $objPegawai->getPendidikan()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Jabatan</label>
-									<input type="text" class="form-control" placeholder="Jabatan" name="p_jabatan" value="">
+									<input type="text" class="form-control" placeholder="Jabatan" name="p_jabatan" value="<?php echo $objPegawai->getJabatan()?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Info Pegawai</label>
-									<input type="text" class="form-control" placeholder="Info Pegawai" name="info_peg" value="">
+									<input type="text" class="form-control" placeholder="Info Pegawai" name="info_peg" value="<?php echo $objPegawai->getInfoPeg()?>">
 								</div>
 						</div>
 						<div class="panel-footer" align="right">
@@ -79,22 +79,22 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script src="<?php echo base_url(" assets/vendor/jquery/jquery.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/jquery/jquery.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/bootstrap/js/bootstrap.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/bootstrap/js/bootstrap.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/chartist/js/chartist.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/chartist/js/chartist.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/scripts/klorofil-common.js"); ?>
+<script src="<?php echo base_url("assets/scripts/klorofil-common.js"); ?>
 	">
 </script>
 </body>

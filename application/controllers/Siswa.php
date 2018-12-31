@@ -56,7 +56,7 @@ class Siswa extends CI_Controller {
 
 				if($jabatan == 3){
 					$this->load->view('HeaderFooter/Header3', $data);
-					$this->load->view('siswaall_view', $data);
+					$this->load->view('viewAllSiswa', $data);
 				} else if($jabatan == 2 OR $jabatan == 1) {
 					$this->load->view('HeaderFooter/Header1', $data);
 					$this->load->view('siswaall_view', $data);
@@ -119,7 +119,7 @@ class Siswa extends CI_Controller {
                 // print_r($session_data);
 				if($jabatan == 3){
 					$this->load->view('HeaderFooter/Header3', $data);
-					$this->load->view('inputsiswa_view', $data);
+					$this->load->view('viewCreateSiswa', $data);
 				} else {
 					return false;
 				}
@@ -165,7 +165,7 @@ class Siswa extends CI_Controller {
 
     public function edit($nis){
         $obj    = new ModelDB();
-        $result = $obj->readDataWhere('nis', $nis, 'siswa')[0];
+        $row = $obj->readDataWhere('nis', $nis, 'siswa')[0];
         if($this->session->userdata('logged_in'))
 		   {
 				$session_data = $this->session->userdata('logged_in');

@@ -13,8 +13,11 @@
 	<link rel="stylesheet" href="<?php echo base_url("assets/vendor/chartist/css/chartist-custom.css");?>">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/main.css");?>">
+	
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/demo.css");?>">
+	<link rel="stylesheet" href="<?php echo base_url("assets/vendor/datatables/dataTables.bootstrap.css");?>">
+  	<link href="<?php echo base_url("assets/vendor/Select2/dist/css/select2.min.css");?>" rel="stylesheet" />
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
@@ -44,12 +47,9 @@
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span><?php echo $objUser['namalengkap'];?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="<?php echo base_url('/index.php/verifyLogin/logout')?>"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 						<!-- <li>
@@ -67,21 +67,21 @@
 					<ul class="nav">
 						<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-code"></i> <span>Pegawai</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-user-o"></i> <span>Pegawai</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">Data Pegawai</a></li>
-									<li><a href="page-login.html" class="">Tambah Pegawai</a></li>
+									<li><a href="<?php echo base_url('index.php/Pegawai')?>" class="">Data Pegawai</a></li>
+									<li><a href="<?php echo base_url('index.php/Pegawai/inputPegawai')?>" class="">Tambah Pegawai</a></li>
 									<li><a href="page-login.html" class="">Buat Akun</a></li>
 								</ul>
 							</div>
 						</li>
 						<li>
-							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-code"></i> <span>Siswa</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Siswa</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">Data Siswa All</a></li>
-									<li><a href="page-login.html" class="">Input Siswa</a></li>
+									<li><a href="<?php echo base_url('index.php/Siswa')?>" class="">Data Siswa All</a></li>
+									<li><a href="<?php echo base_url('index.php/Siswa/inputSiswa')?>" class="">Input Siswa</a></li>
 								</ul>
 							</div>
 						</li>
@@ -89,9 +89,9 @@
 							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-chart-bars"></i> <span>Nilai</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages3" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">Data Nilai</a></li>
-									<li><a href="page-profile.html" class="">Verifikasi Nilai</a></li>
-									<li><a href="page-login.html" class="">Input Nilai</a></li>
+									<li><a href="<?php echo base_url('index.php/Nilai')?>" class="">Data Semua Nilai</a></li>
+									<li><a href="#" class="">Verifikasi Nilai</a></li>
+									<li><a href="<?php echo base_url('index.php/Nilai/searchNilai')?>" class="">Nilai Kelas</a></li>
 								</ul>
 							</div>
 						</li>						
@@ -99,12 +99,12 @@
 							<a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cog"></i> <span>Kelas</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages4" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">Data Kelas</a></li>
-									<li><a href="page-login.html" class="">Tambah Kelas</a></li>
+									<li><a href="<?php echo base_url('index.php/Kelas')?>" class="">Data Kelas</a></li>
+									<li><a href="<?php echo base_url('index.php/inputKelas')?>" class="">Tambah Kelas</a></li>
 								</ul>
 							</div>
 						</li>	
-						<li>
+						<!-- <li>
 							<a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="lnr lnr-alarm"></i> <span>Kurikulum</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages5" class="collapse ">
 								<ul class="nav">
@@ -113,7 +113,7 @@
 									<li><a href="page-login.html" class="">Tambah Mata Pelajaran</a></li>
 								</ul>
 							</div>
-						</li>
+						</li> -->
 						
 					</ul>
 				</nav>

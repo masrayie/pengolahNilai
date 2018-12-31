@@ -71,7 +71,7 @@ class VerifyLogin extends CI_Controller {
                 'username'    => $obj->getUsername(),
                 'namalengkap' => $obj->getNamaLengkap(),  
                 'ttl'         => $obj->getTtl(),
-                'jenkel'         => $obj->getJenkel(),
+                'jenkel'      => $obj->getJenkel(),
                 'alamat'      => $obj->getAlamat(),
                 'telepon'     => $obj->getTelepon(),
                 'pendidikan'  => $obj->getPendidikan(),
@@ -146,6 +146,13 @@ class VerifyLogin extends CI_Controller {
      return false;
    }
  }
+ 
+ public function logout()
+  {
+    $this->session->unset_userdata('logged_in');
+    session_destroy();
+    redirect('Home', 'refresh');
+  }
 
 }
 ?>

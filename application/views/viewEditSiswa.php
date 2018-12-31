@@ -16,46 +16,46 @@
 							<h3 class="panel-title">Form Edit Siswa</h3>
 						</div>
 						<div class="panel-body">
-							<form action="/produk" method="POST">
+							<form action="<?php echo base_url('index.php/Siswa/put/'.$objSiswa->getNis())?>" method="POST">
 								<div class="form-group">
 									<label class="control-label ">NIS </label>
-									<input type="text" class="form-control" placeholder="NIS" name="nis" value="">
+									<input type="text" class="form-control" placeholder="NIS" name="nis" value="<?php echo $objSiswa->getNis();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Kelas </label>
-									<input type="text" class="form-control" placeholder="Kelas" name="id_kelas" value="">
+									<input type="text" class="form-control" placeholder="Kelas" name="id_kelas" value="<?php echo $objSiswa->getIdKelas();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Nama Siswa </label>
-									<input type="text" class="form-control" placeholder="Nama Siswa" name="ttl" value="">
+									<input type="text" class="form-control" placeholder="Nama Siswa" name="nama_siswa" value="<?php echo $objSiswa->getNamaSiswa();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Jenis Kelamin </label>
-									<input type="text" class="form-control" placeholder="Jenis Kelamin" name="jenkel" value="">
+									<input type="text" class="form-control" placeholder="Jenis Kelamin" name="jenkel" value="<?php echo $objSiswa->getJenkel();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Agama </label>
-									<input type="text" class="form-control" placeholder="Agama" name="agama" value="">
+									<input type="text" class="form-control" placeholder="Agama" name="agama" value="<?php echo $objSiswa->getAgama();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Telepon </label>
-									<input type="text" class="form-control" placeholder="Telepon" name="telepon_siswa" value="">
+									<input type="text" class="form-control" placeholder="Telepon" name="telepon_siswa" value="<?php echo $objSiswa->getTeleponSiswa();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Alamat </label>
-									<input type="text" class="form-control" placeholder="Alamat" name="alamat" value="">
+									<input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo $objSiswa->getAlamat();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">Semester</label>
-									<input type="text" class="form-control" placeholder="Semester" name="semester" value="">
+									<input type="text" class="form-control" placeholder="Semester" name="semester" value="<?php echo $objSiswa->getSemester();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">No. Ijazah</label>
-									<input type="text" class="form-control" placeholder="No. Ijazah" name="ijazah_no" value="">
+									<input type="text" class="form-control" placeholder="No. Ijazah" name="ijazah_no" value="<?php echo $objSiswa->getIjazah();?>">
 								</div>
 								<div class="form-group">
 									<label class="control-label ">No. SKUHN</label>
-									<input type="text" class="form-control" placeholder="No. SKHUN" name="skhun_no" value="">
+									<input type="text" class="form-control" placeholder="No. SKHUN" name="skhun_no" value="<?php echo $objSiswa->getSkhun();?>">
 								</div>
 						</div>
 						<div class="panel-footer" align="right">
@@ -83,22 +83,22 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script src="<?php echo base_url(" assets/vendor/jquery/jquery.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/jquery/jquery.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/bootstrap/js/bootstrap.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/bootstrap/js/bootstrap.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/vendor/chartist/js/chartist.min.js"); ?>
+<script src="<?php echo base_url("assets/vendor/chartist/js/chartist.min.js"); ?>
 	">
 </script>
-<script src="<?php echo base_url(" assets/scripts/klorofil-common.js"); ?>
+<script src="<?php echo base_url("assets/scripts/klorofil-common.js"); ?>
 	">
 </script>
 <script>

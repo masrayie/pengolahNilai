@@ -36,7 +36,7 @@ class Home extends CI_Controller {
 				// print_r($session_data);
 				if($jabatan == 3){
 					$this->load->view('HeaderFooter/Header3', $data);
-					$this->load->view('viewEditSiswa', $data);
+					$this->load->view('index', $data);
 				} else if($jabatan == 2 OR $jabatan == 1) {
 					$this->load->view('HeaderFooter/Header1', $data);
 					$this->load->view('index', $data);
